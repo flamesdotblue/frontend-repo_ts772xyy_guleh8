@@ -1,63 +1,59 @@
-import { BookOpen, Code, Wrench, Info, ShieldCheck } from 'lucide-react';
+import { Rocket, Users, Award, Shield, Globe, Layers } from 'lucide-react';
 
 const features = [
   {
-    title: 'Courses',
-    desc: 'Structured learning paths with videos, PDFs, and quizzes.',
-    icon: BookOpen,
-    href: '#courses',
+    icon: Rocket,
+    title: 'Fast onboarding',
+    desc: 'Start learning in minutes with simple sign-up and instant access to curated tracks.'
   },
   {
-    title: 'Programming Languages',
-    desc: 'Hands-on lessons for Python, C, C++, and JavaScript.',
-    icon: Code,
-    href: '#languages',
+    icon: Users,
+    title: 'Role-aware dashboards',
+    desc: 'Students, faculty, and admins see the tools they need — nothing more.'
   },
   {
-    title: 'Tech Information',
-    desc: 'Bite-sized explainers like How the Internet Works.',
-    icon: Info,
-    href: '#tech',
+    icon: Layers,
+    title: 'Structured content',
+    desc: 'Courses, languages, tech stacks, and tools organized into clear playlists.'
   },
   {
-    title: 'Tools',
-    desc: 'Deep dives into Git, GitHub, AI tools, and more.',
-    icon: Wrench,
-    href: '#tools',
+    icon: Shield,
+    title: 'Secure by default',
+    desc: 'Modern auth, protected routes, and best practices baked in from the start.'
   },
   {
-    title: 'Exam',
-    desc: 'Attempt practice tests and track progress over time.',
-    icon: ShieldCheck,
-    href: '#exam',
+    icon: Globe,
+    title: 'Learn anywhere',
+    desc: 'Responsive design with dark mode so you can study on any device.'
   },
+  {
+    icon: Award,
+    title: 'Assess & certify',
+    desc: 'Practice exams and tracked results help you measure progress and earn badges.'
+  }
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="relative mx-auto max-w-7xl px-4 py-16 sm:py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Everything you need to learn</h2>
-        <p className="mt-3 text-base text-gray-600 sm:text-lg dark:text-gray-300">
-          Explore curated content across topics with a consistent blue, white, and gray aesthetic.
-        </p>
-      </div>
+    <section id="features" className="relative py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Everything you need to level up</h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-300">A focused toolset designed for momentum — not distraction.</p>
+        </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ title, desc, icon: Icon, href }) => (
-          <a
-            key={title}
-            href={href}
-            className="group relative rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600/10 text-blue-700 group-hover:bg-blue-600/20 dark:text-blue-300">
-              <Icon />
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((f, i) => (
+            <div key={i} className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 transition hover:shadow-md">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 ring-1 ring-blue-200 dark:ring-blue-800">
+                <f.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{f.title}</h3>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{f.desc}</p>
+              <a href="#home" className="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-700">Learn more →</a>
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{desc}</p>
-            <span className="mt-4 inline-block text-sm font-medium text-blue-700 group-hover:underline dark:text-blue-300">Explore →</span>
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

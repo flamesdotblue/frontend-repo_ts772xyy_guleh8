@@ -1,13 +1,15 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-gray-600 dark:text-gray-400">© {new Date().getFullYear()} eLearning. All rights reserved.</p>
-        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-          <a href="#policy" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">Policy</a>
-          <a href="#about" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">About Us</a>
-          <a href="#contact" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">Contact</a>
-        </nav>
+    <footer className="border-t border-gray-200 dark:border-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600 dark:text-gray-300">
+          <p>© {new Date().getFullYear()} Flames eLearning. All rights reserved.</p>
+          <nav className="flex items-center gap-4">
+            <a href="#privacy" className="hover:text-blue-600">Privacy</a>
+            <a href="#terms" className="hover:text-blue-600">Terms</a>
+            <a href="#contact" className="hover:text-blue-600">Contact</a>
+          </nav>
+        </div>
       </div>
     </footer>
   );
